@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Levanna</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+
+<div class="logo-container">
+<img src="images/logo.png" alt="Levanna Logo" class="logo">
+</div>
+
+<button id="menuBtn" class="menu-btn">
+☰
+</button>
+
+<div id="menu" class="menu">
+<a href="#inicio">Inicio</a>
+<a href="#productos">Productos</a>
+<a href="#beneficios">Beneficios</a>
+<a href="#contacto">Contacto</a>
+</div>
+
+<div class="cart-icon" id="cartBtn">
+🛒 <span id="cartCount">0</span>
+</div>
+
+</header>
+
+<section class="hero" id="inicio">
+
+<h1>LEVANNA</h1>
+
+<p class="frase">
+La naturaleza en tus manos,
+la tranquilidad en tu piel.
+</p>
+
+</section>
+
+<section class="quote">
+
+🌿 Respira profundo.<br>
+La naturaleza siempre encuentra la manera de cuidarnos.
+
+</section>
+
+<section id="productos">
+
+<h2>Nuestra Colección</h2>
+
+<div class="products">
+
+<div class="product-card">
+<img src="images/lavanda.jpg">
+<h3>Jabón de Lavanda</h3>
+<p>Relajante y aromático.</p>
+<div class="price">$80</div>
+<button onclick="addToCart('Jabón de Lavanda',80)">
+Agregar al carrito
+</button>
+</div>
+
+<div class="product-card">
+<img src="images/avena-con-miel.jpg">
+<h3>Avena con Miel</h3>
+<p>Nutrición y suavidad.</p>
+<div class="price">$80</div>
+<button onclick="addToCart('Avena con Miel',80)">
+Agregar al carrito
+</button>
+</div>
+
+<div class="product-card">
+<img src="images/cafe-con-canela.jpg">
+<h3>Café con Canela</h3>
+<p>Exfoliación natural.</p>
+<div class="price">$80</div>
+<button onclick="addToCart('Café con Canela',80)">
+Agregar al carrito
+</button>
+</div>
+
+<div class="product-card">
+<img src="images/curcuma.jpg">
+<h3>Cúrcuma</h3>
+<p>Frescura y bienestar.</p>
+<div class="price">$80</div>
+<button onclick="addToCart('Cúrcuma',80)">
+Agregar al carrito
+</button>
+</div>
+
+<div class="product-card">
+<img src="images/corazon.jpg">
+<h3>Corazón</h3>
+<p>Edición especial.</p>
+<div class="price">$80</div>
+<button onclick="addToCart('Corazón',80)">
+Agregar al carrito
+</button>
+</div>
+
+<div class="product-card">
+<img src="images/terapeutico.jpg">
+<h3>Terapéutico</h3>
+<p>Bienestar para tu día.</p>
+<div class="price">$80</div>
+<button onclick="addToCart('Terapéutico',80)">
+Agregar al carrito
+</button>
+</div>
+
+</div>
+
+</section>
+
+<section id="beneficios" class="benefits">
+
+<h2>¿Por qué Levanna?</h2>
+
+<div class="benefit">
+🌿 Ingredientes seleccionados
+</div>
+
+<div class="benefit">
+✨ Elaboración artesanal
+</div>
+
+<div class="benefit">
+🪻 Aromas relajantes
+</div>
+
+<div class="benefit">
+🤍 Cuidado para tu piel
+</div>
+
+</section>
+
+<div id="cartPanel" class="cart-panel">
+
+<h2>Tu Pedido</h2>
+
+<div id="cartItems"></div>
+
+<h3 id="cartTotal">
+Total: $0
+</h3>
+
+<button id="whatsappBtn">
+Pedir por WhatsApp
+</button>
+
+</div>
+
+<section id="contacto" class="footer">
+
+<h2>LEVANNA</h2>
+
+<p>
+Bienestar que puedes sentir.
+</p>
+
+</section>
+
+<script src="app.js"></script>
+
+</body>
+</html>
