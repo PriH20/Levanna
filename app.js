@@ -15,11 +15,7 @@ function addToCart(name, price) {
   if (product) {
     product.quantity++;
   } else {
-    cart.push({
-      name: name,
-      price: price,
-      quantity: 1
-    });
+    cart.push({ name, price, quantity: 1 });
   }
 
   updateCart();
@@ -62,7 +58,6 @@ function decreaseItem(index) {
   } else {
     cart.splice(index, 1);
   }
-
   updateCart();
 }
 
@@ -96,7 +91,7 @@ whatsappBtn.addEventListener("click", () => {
 
   message += `%0ATotal: $${total}`;
 
-  const phone = "524771429907";
+  const phone = "524776358516";
   const url = `https://wa.me/${phone}?text=${message}`;
 
   window.open(url, "_blank");
