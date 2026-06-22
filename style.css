@@ -558,3 +558,39 @@ header{
   box-shadow:0 8px 25px rgba(0,0,0,.3);
   z-index:3000;
 }
+.hero-btn{
+  display:inline-block;
+  margin-top:28px;
+  background:linear-gradient(135deg,#22c55e,#7c3aed);
+  color:white;
+  text-decoration:none;
+  padding:18px 34px;
+  border-radius:999px;
+  font-size:22px;
+  font-weight:800;
+  box-shadow:0 12px 28px rgba(0,0,0,.28);
+}
+
+.product-card,
+.benefit,
+.pack-card,
+.review{
+  animation: subirSuave .7s ease both;
+}
+
+@keyframes subirSuave{
+  from{
+    opacity:0;
+    transform:translateY(22px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.product-card:hover,
+.pack-card:hover{
+  transform:translateY(-6px);
+  transition:.25s;
+}
