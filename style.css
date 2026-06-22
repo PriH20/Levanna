@@ -594,3 +594,46 @@ header{
   transform:translateY(-6px);
   transition:.25s;
 }
+.gallery,
+.promos{
+padding:40px 16px;
+background:white;
+}
+
+.gallery h2,
+.promos h2{
+text-align:center;
+font-size:clamp(40px,10vw,60px);
+color:#4c1d95;
+margin-bottom:24px;
+}
+
+.gallery-container{
+display:flex;
+overflow-x:auto;
+gap:18px;
+scroll-snap-type:x mandatory;
+padding-bottom:10px;
+}
+
+.gallery-container img{
+width:280px;
+height:280px;
+object-fit:cover;
+border-radius:28px;
+scroll-snap-align:center;
+box-shadow:0 12px 30px rgba(0,0,0,.15);
+flex-shrink:0;
+}
+
+.promo-card{
+background:linear-gradient(135deg,#22c55e,#7c3aed);
+color:white;
+padding:26px;
+border-radius:28px;
+margin-bottom:20px;
+font-size:28px;
+font-weight:800;
+text-align:center;
+box-shadow:0 12px 28px rgba(0,0,0,.2);
+}
