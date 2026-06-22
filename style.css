@@ -637,3 +637,47 @@ font-weight:800;
 text-align:center;
 box-shadow:0 12px 28px rgba(0,0,0,.2);
 }
+.search-box{
+width:100%;
+padding:18px;
+font-size:22px;
+border:none;
+border-radius:20px;
+background:#f3f4f6;
+margin-bottom:25px;
+}
+.location-btn{
+display:inline-block;
+margin-top:20px;
+background:#4c1d95;
+color:white;
+padding:18px 30px;
+border-radius:50px;
+text-decoration:none;
+font-size:22px;
+font-weight:700;
+}
+#loader{
+position:fixed;
+inset:0;
+background:white;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+transition:.6s;
+}
+
+.loader-logo{
+width:180px;
+animation:girar 2s infinite linear;
+}
+
+@keyframes girar{
+from{
+transform:rotate(0deg);
+}
+to{
+transform:rotate(360deg);
+}
+}
