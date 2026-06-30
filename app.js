@@ -11,7 +11,14 @@ const menu = document.getElementById("menu");
 
 function addToCart(name, price) {
   const product = cart.find(item => item.name === name);
+if (typeof gtag === "function") {
+   gtag("event","agregar_carrito", {
+     producto: name,
+     precio: price
+   });
+   }
 
+   
   if (product) {
     product.quantity++;
   } else {
@@ -93,6 +100,48 @@ whatsappBtn.addEventListener("click", () => {
 
   const phone = "524776358516";
   const url = `https://wa.me/${phone}?text=${message}`;
+if (typeof gtag === "function") {
+   gtag("event","pedido_whatsapp",{
+    total: total
+    });
+    }
 
   window.open(url, "_blank");
 });
+// Ocultar pantalla de carga
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+
+  if (loader) {
+    loader.style.opacity = "0";
+
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 600);
+  }
+});
+const buscador =
+document.getElementByld("searchIput");
+
+if (buscador) {
+  buscador.addEventListener("keyup",() =>{
+    if (typeof gtag==="function"){
+      gtag("event","buscar_producto",{
+        texto: buscador.value
+        });
+      }
+  });
+}
+
+window.addEventListener("scroll", () => {
+  const porcentaje = Math.round(
+       (window.scrollY /
+      (document.body.scrollHeight -
+      window.innerHeight)) * 100
+      );
+      
+      if (porcentaje >= 90 && typeof gtag ===
+        "function") {
+          gtag("event","pagina_completa");
+          }
+        });
