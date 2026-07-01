@@ -8,17 +8,11 @@ const cartCount = document.getElementById("cartCount");
 const whatsappBtn = document.getElementById("whatsappBtn");
 const menuBtn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
+const searchInput = document.getElementById("searchInput");
 
 function addToCart(name, price) {
   const product = cart.find(item => item.name === name);
-if (typeof gtag === "function") {
-   gtag("event","agregar_carrito", {
-     producto: name,
-     precio: price
-   });
-   }
 
-   
   if (product) {
     product.quantity++;
   } else {
@@ -27,6 +21,13 @@ if (typeof gtag === "function") {
 
   updateCart();
   cartPanel.classList.add("show");
+
+  if (typeof gtag === "function") {
+    gtag("event", "agregar_carrito", {
+      producto: name,
+      precio: price
+    });
+  }
 }
 
 function updateCart() {
@@ -41,7 +42,7 @@ function updateCart() {
 
     cartItems.innerHTML += `
       <div class="cart-item">
-        <p>${item.name}</p>
+        <p><strong>${item.name}</strong></p>
         <p>$${item.price} x ${item.quantity}</p>
         <button onclick="decreaseItem(${index})">-</button>
         <button onclick="increaseItem(${index})">+</button>
@@ -98,50 +99,25 @@ whatsappBtn.addEventListener("click", () => {
 
   message += `%0ATotal: $${total}`;
 
-  const phone = "524776358516";
-  const url = `https://wa.me/${phone}?text=${message}`;
-if (typeof gtag === "function") {
-   gtag("event","pedido_whatsapp",{
-    total: total
-    });
-    }
-
-  window.open(url, "_blank");
-});
-// Ocultar pantalla de carga
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loader");
-
-  if (loader) {
-    loader.style.opacity = "0";
-
-    setTimeout(() => {
-      loader.style.display = "none";
-    }, 600);
+  if (typeof gtag === "function") {
+    gtag("event", "pedido_whatsapp", { total });
   }
-});
-const buscador =
-document.getElementByld("searchIput");
 
-if (buscador) {
-  buscador.addEventListener("keyup",() =>{
-    if (typeof gtag==="function"){
-      gtag("event","buscar_producto",{
-        texto: buscador.value
-        });
-      }
+  window.open(`https://wa.me/524776358516?text=${message}`, "_blank");
+});
+
+if (searchInput) {
+  searchInput.addEventListener("input", () => {
+    const text = searchInput.value.toLowerCase();
+    const cards = document.querySelectorAll(".product-card");
+
+    cards.forEach(card => {
+      const name = card.querySelector("h3").textContent.toLowerCase();
+      card.style.display = name.includes(text) ? "block" : "none";
+    });
+
+    if (typeof gtag === "function" && text.length > 1) {
+      gtag("event", "buscar_producto", { texto: text });
+    }
   });
 }
-
-window.addEventListener("scroll", () => {
-  const porcentaje = Math.round(
-       (window.scrollY /
-      (document.body.scrollHeight -
-      window.innerHeight)) * 100
-      );
-      
-      if (porcentaje >= 90 && typeof gtag ===
-        "function") {
-          gtag("event","pagina_completa");
-          }
-        });
