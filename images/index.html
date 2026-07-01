@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Levanna</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="brand">
+    <img src="images/Logo.png" alt="Levanna" class="logo">
+    <div>
+      <strong>LEVANNA</strong>
+      <span>Jabones artesanales</span>
+    </div>
+  </div>
+
+  <button id="menuBtn" class="menu-btn">☰</button>
+
+  <nav id="menu" class="menu">
+    <a href="#inicio">Inicio</a>
+    <a href="#productos">Productos</a>
+    <a href="#beneficios">Beneficios</a>
+    <a href="#promos">Promos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <button class="cart-icon" id="cartBtn">
+    🛒 <span id="cartCount">0</span>
+  </button>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+  <div class="hero-text">
+    <span class="tag">Natural · Artesanal · Cuidado diario</span>
+
+    <h1>Jabones naturales para una piel más suave</h1>
+
+    <p>
+      Sensación fresca, piel al natural. Elaborados con aromas relajantes,
+      ingredientes seleccionados y una presentación elegante.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#productos" class="primary-btn">Ver catálogo</a>
+      <a href="https://wa.me/524776358516" class="secondary-btn">Pedir por WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="hero-media">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="video.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+<section class="features" id="beneficios">
+  <div class="feature-card">
+    <span>🌿</span>
+    <h3>Ingredientes naturales</h3>
+    <p>Inspirados en plantas, aromas suaves y cuidado diario.</p>
+  </div>
+
+  <div class="feature-card">
+    <span>🤍</span>
+    <h3>Hechos a mano</h3>
+    <p>Cada pieza se prepara con detalle y presentación especial.</p>
+  </div>
+
+  <div class="feature-card">
+    <span>🪻</span>
+    <h3>Aromas relajantes</h3>
+    <p>Una experiencia fresca y tranquila para tu piel.</p>
+  </div>
+</section>
+
+<section id="productos" class="products-section">
+  <div class="section-title">
+    <span>Nuestra colección</span>
+    <h2>Elige tu jabón favorito</h2>
+  </div>
+
+  <input type="text" id="searchInput" class="search-box" placeholder="Buscar jabón...">
+
+  <div class="products">
+
+    <article class="product-card">
+      <span class="badge">Más vendido</span>
+      <img src="images/Lavanda.jpg" alt="Jabón de Lavanda">
+      <h3>Jabón de Lavanda</h3>
+      <p>Relajante y aromático.</p>
+      <div class="price">$80</div>
+      <button onclick="addToCart('Jabón de Lavanda',80)">Agregar al carrito</button>
+    </article>
+
+    <article class="product-card">
+      <span class="badge">Suavidad</span>
+      <img src="images/Avena-con-miel.jpg" alt="Avena con Miel">
+      <h3>Avena con Miel</h3>
+      <p>Nutrición y suavidad.</p>
+      <div class="price">$80</div>
+      <button onclick="addToCart('Avena con Miel',80)">Agregar al carrito</button>
+    </article>
+
+    <article class="product-card">
+      <span class="badge">Exfoliante</span>
+      <img src="images/Cafe-con-Canela.jpg" alt="Café con Canela">
+      <h3>Café con Canela</h3>
+      <p>Exfoliación natural.</p>
+      <div class="price">$80</div>
+      <button onclick="addToCart('Café con Canela',80)">Agregar al carrito</button>
+    </article>
+
+    <article class="product-card">
+      <span class="badge">Natural</span>
+      <img src="images/Curcuma.jpg" alt="Cúrcuma">
+      <h3>Cúrcuma</h3>
+      <p>Frescura y bienestar.</p>
+      <div class="price">$80</div>
+      <button onclick="addToCart('Cúrcuma',80)">Agregar al carrito</button>
+    </article>
+
+    <article class="product-card">
+      <span class="badge">Regalo</span>
+      <img src="images/Corazon.jpg" alt="Corazón">
+      <h3>Corazón</h3>
+      <p>Edición especial.</p>
+      <div class="price">$80</div>
+      <button onclick="addToCart('Corazón',80)">Agregar al carrito</button>
+    </article>
+
+    <article class="product-card">
+      <span class="badge">Bienestar</span>
+      <img src="images/Terapeutico2.jpg" alt="Terapéutico">
+      <h3>Terapéutico</h3>
+      <p>Bienestar para tu día.</p>
+      <div class="price">$80</div>
+      <button onclick="addToCart('Terapéutico',80)">Agregar al carrito</button>
+    </article>
+
+  </div>
+</section>
+
+<section class="promo-section" id="promos">
+  <div class="promo-box">
+    <span>Promoción especial</span>
+    <h2>Paquetes Levanna</h2>
+    <p>Combina tus jabones favoritos y arma un regalo natural.</p>
+
+    <div class="promo-grid">
+      <button onclick="addToCart('Pack Relajación',150)">Pack Relajación · $150</button>
+      <button onclick="addToCart('Pack Natural',220)">Pack Natural · $220</button>
+      <button onclick="addToCart('Pack Familiar',400)">6 Jabones · $400</button>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="section-title">
+    <span>Detalles naturales</span>
+    <h2>Galería Levanna</h2>
+  </div>
+
+  <div class="gallery-container">
+    <img src="images/Lavanda.jpg" alt="Lavanda">
+    <img src="images/Avena-con-miel.jpg" alt="Avena con Miel">
+    <img src="images/Cafe-con-Canela.jpg" alt="Café con Canela">
+    <img src="images/Curcuma.jpg" alt="Cúrcuma">
+    <img src="images/Corazon.jpg" alt="Corazón">
+    <img src="images/Terapeutico2.jpg" alt="Terapéutico">
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title">
+    <span>Opiniones</span>
+    <h2>Clientes felices</h2>
+  </div>
+
+  <div class="review-card">
+    <img src="images/Lavanda.jpg" alt="Reseña Levanna">
+    <div>
+      <span>★★★★★</span>
+      <p>“Me encantó el aroma y la suavidad que deja.”</p>
+      <h4>- María G.</h4>
+    </div>
+  </div>
+
+  <div class="review-card">
+    <img src="images/Corazon.jpg" alt="Reseña Levanna">
+    <div>
+      <span>★★★★★</span>
+      <p>“Excelente para regalo, se ve muy bonito.”</p>
+      <h4>- Fernanda R.</h4>
+    </div>
+  </div>
+
+  <div class="review-card">
+    <img src="images/Avena-con-miel.jpg" alt="Reseña Levanna">
+    <div>
+      <span>★★★★★</span>
+      <p>“Avena con miel fue mi favorito.”</p>
+      <h4>- Andrea H.</h4>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="footer">
+  <h2>LEVANNA</h2>
+  <p>📍 León, Guanajuato</p>
+  <p>🕘 Lunes a Domingo · 9:00 AM - 8:00 PM</p>
+  <p>📱 WhatsApp: +52 477 635 8516</p>
+
+  <a href="https://wa.me/524776358516" class="footer-btn">Hacer pedido</a>
+</section>
+
+</main>
+
+<div id="cartPanel" class="cart-panel">
+  <h2>Tu pedido</h2>
+  <div id="cartItems"></div>
+  <h3 id="cartTotal">Total: $0</h3>
+  <button id="whatsappBtn">Pedir por WhatsApp</button>
+</div>
+
+<a href="https://wa.me/524776358516" class="whatsapp-float">💬</a>
+
+<script src="app.js"></script>
+</body>
+</html>
